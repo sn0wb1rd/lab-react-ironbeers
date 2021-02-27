@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
+import React, {Component} from 'react';
+import { Route, Switch, withRouter } from  "react-router-dom";
 import './App.css';
+import Home from './components/Home';
+import BeerList from './components/BeerList';
+import RandomBeer from './components/RandomBeer';
+import NewBeer from './components/NewBeer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  
+  
+  render () {
+        return (
+          <div className="The App">
+            <Switch>
+              <Route exact path="/" render={() => {
+                return <Home />
+              }}
+              /> 
+              <Route path="/beers" render={() => {
+                return <BeerList />
+              }}
+              />
+              <Route path="/random-beer" render={() => {
+                return <RandomBeer />
+              }}
+              />
+              <Route path="/new-beer" render={() => {
+                return <NewBeer />
+              }}
+              />
+            </Switch>   
+          </div>
+        );
+  } 
 }
 
-export default App;
+
+export default withRouter(App);

@@ -75,10 +75,10 @@ Create a **Home Page**. This view should include three links to separate pages:
 - `/random-beer`
 - `/new-beer`
 
-Feel free to design it however you wish, but in case you want to do it the way we did it, you can find the following images in `public/images` folder:
+Feel free to design it however you wish, but in case you want to do it the way we did it, you can find the following  in `public/` folder:
 
 <div style="display: flex; justify-content: center">
-  <img src="https://user-images.githubusercontent.com/23629340/40706572-933439b8-63ee-11e8-8d65-538fb59f79ab.png" height="600px" />
+  <img src="https://user-.githubusercontent.com/23629340/40706572-933439b8-63ee-11e8-8d65-538fb59f79ab.png" height="600px" />
 </div>
 
 ### Iteration 2 | Header
@@ -86,7 +86,7 @@ Feel free to design it however you wish, but in case you want to do it the way w
 On every view (except for the `home`), we should add a **header** with a `link` to the root of the `app`.
 
 <div style="display: flex; justify-content: center">
-  <img src="https://user-images.githubusercontent.com/23629340/40707029-cb2fce12-63ef-11e8-939c-f673ff3b965d.png" height="100px" />
+  <img src="https://user-.githubusercontent.com/23629340/40707029-cb2fce12-63ef-11e8-939c-f673ff3b965d.png" height="100px" />
 </div>
 
 ### Iteration 3 | List all the beers
