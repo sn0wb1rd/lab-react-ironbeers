@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
+import NavBarry from './NavBarry';
 
 class NewBeer extends Component {
 
@@ -8,6 +9,7 @@ class NewBeer extends Component {
 
         return (
             <div>
+                <NavBarry />
                 page: a new beer
             </div>
 

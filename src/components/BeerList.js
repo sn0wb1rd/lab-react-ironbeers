@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
-import beerImg from '../assets/beers.png';;
+import NavBarry from './NavBarry';
 
 class BeerList extends Component {
 
@@ -9,15 +9,11 @@ class BeerList extends Component {
 
         return (
             <div>
-            
+                <NavBarry />            
                 <h3 className="display-6">page: The Beer List</h3>
-
             </div>
-        )
-        
+        )        
     } 
-
-
 }
 
 
