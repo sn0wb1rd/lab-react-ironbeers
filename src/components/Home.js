@@ -30,7 +30,7 @@ class Home extends Component {
                 <div className="card text-left">
                     <img src={randomBeer} alt='beertap'/> 
                     <Link to='/random-beer' className='text-link pl-4 pt-2 pb-4'>
-                    <h3 className="display-6">The Beer List</h3>
+                    <h3 className="display-6">Random beer</h3>
                         <article>
                             The beer industry in the United States turns annual profits of over 100 billion dollars.
                         </article>               
