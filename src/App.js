@@ -13,7 +13,7 @@ class App extends Component {
 
   state = {
     beerList: [],
-    randomBeerId: 0
+    // randomBeerId: 0
   }   
 
   // Get al the beers for the beerlist page
@@ -42,36 +42,38 @@ class App extends Component {
     let contributed_by = event.target.contributed_by.value
 
     axios.post(('https://ih-beers-api2.herokuapp.com/beers/new'), {
-      // name: name,
-      // tagline: tagline, 
-      // first_brewed: first_brewed,
-      // brewers_tips: brewers_tips,
-      // attenuation_level: attenuation_level,
-      // contributed_by:contributed_by
       name: "test",
       tagline: "test", 
       first_brewed: "test",
       brewers_tips: "test",
       attenuation_level: 16,
       contributed_by: "John Doe"
+    
+      // name: name,
+      // tagline: tagline, 
+      // first_brewed: first_brewed,
+      // brewers_tips: brewers_tips,
+      // attenuation_level: attenuation_level,
+      // contributed_by:contributed_by
+
     })
       .then((response) => {
-        console.log(response)
+        console.log('new object ', response)
+        console.log('(old) beerlist ', [...this.state.beerList].length)
+        this.setState({
+          beerList: [response.data, ...this.state.beerList]
+        })
+        console.log('(new) beerlist  ', [...this.state.beerList].length)
       })
       .catch((err) => {
         console.log('err while creating a beer ', err)
       })
   }
-
-
-
   
   
   render () {   
     const {beerList, randomBeerId} = this.state
     
-    console.log('random id: ',randomBeerId )
-    console.log('lenth: ',beerList.length )
         return (
           <div className="The App">
             <Switch>

@@ -17,7 +17,7 @@ class NewBeer extends Component {
                     <input name="brewers_tips" type="text" placeholder="Brew tips"/>
                     <input name="attenuation_level" type="number" placeholder="attenuation level"/>
                     <input name="contributed_by" type="text" placeholder="contributed by"/>
-                <button type="submit" >add ne</button>
+                <button type="submit" >add new beer</button>
             </form>
             </div>
 
