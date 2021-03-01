@@ -10,7 +10,15 @@ class NewBeer extends Component {
         return (
             <div>
                 <NavBarry />
-                page: a new beer
+                <form onSubmit={this.props.onAdd}>
+                    <input name="name" type="text" placeholder="Enter beer name"/>
+                    <input name="tagline" type="text" placeholder="fancy tagline"/>                   
+                    <input name="first_brewed" type="text" placeholder="first brewed"/>
+                    <input name="brewers_tips" type="text" placeholder="Brew tips"/>
+                    <input name="attenuation_level" type="number" placeholder="attenuation level"/>
+                    <input name="contributed_by" type="text" placeholder="contributed by"/>
+                <button type="submit" >add ne</button>
+            </form>
             </div>
 
         )

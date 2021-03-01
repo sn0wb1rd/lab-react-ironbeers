@@ -17,7 +17,7 @@ class App extends Component {
   }   
 
   // Get al the beers for the beerlist page
-
+// does not work for passing vars to single beers...
  componentDidMount(){
     console.log('cDM | App ---------')
     // getting all the beers
@@ -32,11 +32,43 @@ class App extends Component {
     })
   } 
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let name = event.target.name.value
+    let tagline = event.target.tagline.value
+    let first_brewed = event.target.first_brewed.value
+    let brewers_tips = event.target.brewers_tips.value
+    let attenuation_level = event.target.attenuation_level.value
+    let contributed_by = event.target.contributed_by.value
+
+    axios.post(('https://ih-beers-api2.herokuapp.com/beers/new'), {
+      // name: name,
+      // tagline: tagline, 
+      // first_brewed: first_brewed,
+      // brewers_tips: brewers_tips,
+      // attenuation_level: attenuation_level,
+      // contributed_by:contributed_by
+      name: "test",
+      tagline: "test", 
+      first_brewed: "test",
+      brewers_tips: "test",
+      attenuation_level: 16,
+      contributed_by: "John Doe"
+    })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((err) => {
+        console.log('err while creating a beer ', err)
+      })
+  }
+
+
 
   
+  
   render () {   
-    const {beerList} = this.state
-    let randomBeerId = Math.floor(Math.random() * Math.floor(beerList.length))
+    const {beerList, randomBeerId} = this.state
     
     console.log('random id: ',randomBeerId )
     console.log('lenth: ',beerList.length )
@@ -61,7 +93,7 @@ class App extends Component {
               }}
               />
               <Route path="/new-beer" render={() => {
-                return <NewBeer />
+                return <NewBeer onAdd={this.handleSubmit}/>
               }}
               />
               <Route path="/beers/:beerId" render={(routeProps) => {
